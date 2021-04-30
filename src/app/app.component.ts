@@ -9,18 +9,45 @@ let heroCount = 2;
 })
 export class AppComponent {
   // title = 'La Revue des héros';
-  titleStyle = {'font-family' : 'Arial', 'color' : 'red'};
+  titleStyle = { 'font-family': 'Arial', 'color': 'red' };
   username = 'Anonymous';
   heroes = [
-    'Batman', 
-    'Superman', 
-    'Wonderwoman', 
+    'Batman',
+    'Superman',
+    'Wonderwoman',
     'Ironman'
   ];
+  evils = [
+    'Joker',
+    'Luthor',
+    'WonderTrump',
+    'Waterman'
+  ]
   heroToAdd = '';
+  vilainToAdd = '';
+  vilainToRemove = '';
   addHero() {
-    this.heroes.push (this.heroToAdd);
+    this.heroes.push(this.heroToAdd);
     // this.title = 'La Revue des ' + this.heroes.length + ' héros.';
+  }
+  heroToRemove = '';
+  removeHero(heroToRemove: string) {
+    this.heroes.forEach((value, index) => {
+      if (value == heroToRemove) this.heroes.splice(index, 1);
+    });
+  }
+  manageHero(heroToManage: string) {
+    this.heroes.forEach((value, index) => {
+      if (value == heroToManage) this.heroes.splice(index, 1);
+      else this.heroes.push(heroToManage)
+    });
+  }
+  manageCharacter(characterToManage: string, table) {
+    if (table.indexOf(characterToManage) !== -1) {
+      table.forEach((value, index) => {
+        if (value == characterToManage) table.splice(index, 1);
+      });
+    } else table.push(characterToManage)
   }
 }
 
