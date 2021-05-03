@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HeroService } from '../hero.service';
 
 import Hero from '../types/hero.type';
 
@@ -9,21 +10,17 @@ import Hero from '../types/hero.type';
 })
 export class HeroesListComponent implements OnInit {
 
-  heroes = [
-    { id : 1, name : 'Batman' }, 
-    { id : 2, name : 'Superman' }, 
-    { id : 3, name : 'Spiderman' },
-  ];
-
+  heroes: Hero[];
   selectedHero: Hero;
 
-  constructor() { }
+  constructor(private heroService: HeroService) { }
 
   selectHero(hero: Hero) {
     this.selectedHero = hero;
   }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.heroes = this.heroService.getHeroes();
   }
 
 }
