@@ -9,7 +9,7 @@ let heroCount = 2;
 })
 export class AppComponent {
   // title = 'La Revue des héros';
-  titleStyle = { 'font-family': 'Arial', 'color': 'red' };
+  // titleStyle = { 'font-family': 'Arial', 'color': 'red' };
   username = 'Anonymous';
   heroes = [
     'Batman',
@@ -24,13 +24,13 @@ export class AppComponent {
     'Waterman'
   ]
   heroToAdd = '';
+  heroToRemove = '';
   vilainToAdd = '';
   vilainToRemove = '';
   addHero() {
     this.heroes.push(this.heroToAdd);
     // this.title = 'La Revue des ' + this.heroes.length + ' héros.';
   }
-  heroToRemove = '';
   removeHero(heroToRemove: string) {
     this.heroes.forEach((value, index) => {
       if (value == heroToRemove) this.heroes.splice(index, 1);

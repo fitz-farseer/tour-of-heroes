@@ -1,4 +1,4 @@
-<h1 [ngStyle]="titleStyle">Bienvenue dans la Revue des {{ heroes.length }} héros, {{ username }}</h1>
+<h1>Bienvenue dans la Revue des {{ heroes.length }} héros, {{ username }}</h1>
 
 <p>
   <label for="InputUsername">Votre nom <input id="InputUsername" type="text" name="name" [(ngModel)]="username"></label>
@@ -35,6 +35,8 @@
       name="nameOfTheHero" [(ngModel)]="vilainToRemove"></label><button (click)='manageCharacter(vilainToRemove, this.evils)'>Ajouter/Retirer
     vilain</button>
 </p>
+
+<app-heroes-list></app-heroes-list>
 
 <!-- <p>
 <label for="InputHeroNameToRemove">Héros à retirer : <select name="nameOfTheHeroToRemove" id="InputHeroNameToRemove">
