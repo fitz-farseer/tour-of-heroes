@@ -12,10 +12,16 @@ export class HeroesListComponent implements OnInit {
   heroes = [
     { id : 1, name : 'Batman' }, 
     { id : 2, name : 'Superman' }, 
-    {id : 3, name : 'Spiderman' },
+    { id : 3, name : 'Spiderman' },
   ];
 
+  selectedHero: Hero;
+
   constructor() { }
+
+  selectHero(hero: Hero) {
+    this.selectedHero = hero;
+  }
 
   ngOnInit(): void {
   }
